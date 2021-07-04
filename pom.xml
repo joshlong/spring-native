@@ -17,21 +17,33 @@
 		<spring.cloud.version>2020.0.3</spring.cloud.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<spring.cloud.square.version>0.4.0-SNAPSHOT</spring.cloud.square.version>
 	</properties>
 
 	<modules>
 		<module>spring-native-configuration</module>
-		<module>spring-native-tools</module>
+		<!-- <module>spring-native-tools</module> -->
 		<module>spring-native</module>
 		<module>spring-aot</module>
-		<module>spring-aot-maven-plugin</module>
-		<module>spring-aot-gradle-plugin</module>
-		<module>org.springframework.experimental.aot.gradle.plugin</module>
-		<module>spring-native-docs</module>
+		<!-- <module>spring-aot-maven-plugin</module> -->
+<!--		<module>spring-aot-gradle-plugin</module>-->
+<!--		<module>org.springframework.experimental.aot.gradle.plugin</module>-->
+		<!-- <module>spring-native-docs</module> -->
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-square-retrofit</artifactId>
+				<version>${spring.cloud.square.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-square-okhttp</artifactId>
+				<version>${spring.cloud.square.version}</version>
+			</dependency>
+<!--			-->
 			<dependency>
 				<groupId>org.springframework.experimental</groupId>
 				<artifactId>spring-aot</artifactId>
