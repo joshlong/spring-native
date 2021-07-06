@@ -20,17 +20,28 @@ import retrofit2.Retrofit;
 	*/
 @NativeHint(
 	trigger = RetrofitAutoConfiguration.class,
-	options = " -H:+AddAllCharsets --enable-url-protocols=http,https ",
-	types = @TypeHint(
-		access = AccessBits.ALL,
-		types = {
-			Retrofit.Builder.class,
-			AbstractRetrofitClientFactoryBean.class,
-			RetrofitClientFactoryBean.class,
-			RetrofitClientSpecification.class,
-			DefaultRetrofitClientConfiguration.class,
-			LoadBalancerClientConfiguration.class,
-		}))
+	options = "-H:+AddAllCharsets --enable-url-protocols=http,https",
+	types = {
+		@TypeHint(typeNames = {
+			"jdk.vm.ci.meta.JavaKind$FormatWithToString[]",
+			"java.lang.reflect.AnnotatedElement[]",
+			"java.lang.reflect.GenericDeclaration[]",
+			"com.oracle.svm.core.hub.Target_java_lang_constant_Constable[]",
+			"com.oracle.svm.core.hub.Target_java_lang_invoke_TypeDescriptor_OfField[]",
+			"com.oracle.svm.core.hub.Target_java_lang_invoke_TypeDescriptor[]"
+		}),
+		@TypeHint(
+			access = AccessBits.ALL,
+			types = {
+				Retrofit.Builder.class,
+				AbstractRetrofitClientFactoryBean.class,
+				RetrofitClientFactoryBean.class,
+				RetrofitClientSpecification.class,
+				DefaultRetrofitClientConfiguration.class,
+				LoadBalancerClientConfiguration.class,
+			})
+	}
+)
 public class SquareHints implements NativeConfiguration {
 }
 
