@@ -54,8 +54,7 @@
         <dependency>
             <groupId>org.springframework.experimental</groupId>
             <artifactId>spring-native</artifactId>
-            <version>${spring-native.version}</version>
-        </dependency>
+         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
